@@ -79,5 +79,16 @@
                 </FontImageSource>
             </Button.ImageSource>
         </Button>
+        <Button
+    BackgroundColor="Transparent"
+    BorderWidth="0"
+   Command="{Binding GoToRegisterCommand}"
+    FontFamily="MaterialSymbols"
+    FontSize="24"
+    Style="{StaticResource IconButtonStyle}"
+    HorizontalOptions="End"
+    Text="Register"
+    TextColor="Olive"
+    VerticalOptions="Center" />
     </VerticalStackLayout>
 </ContentPage>

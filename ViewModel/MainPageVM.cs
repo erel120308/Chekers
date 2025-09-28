@@ -31,11 +31,15 @@ namespace Chekers.ViewModels
             }
         }
         public bool IsPassword { get; set; } = true;
-
+        public ICommand GoToRegisterCommand { get; }
         public MainPageVM()
         {
             LoginCommand = new Command(async () => await Login(), CanLogin);
             ToggleIsPasswordCommand = new Command(ToggleIsPassword);
+            GoToRegisterCommand = new Command(async () =>
+            {
+                await Application.Current.MainPage.Navigation.PushAsync(new Register());
+            }); 
         }
 
         private void ToggleIsPassword()

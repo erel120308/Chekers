@@ -1,5 +1,6 @@
 ﻿using Chekers.Models;
 
+
 namespace Chekers.ModelLogic
 {
     class User : UserModel
@@ -7,6 +8,14 @@ namespace Chekers.ModelLogic
         public override bool TheUser()
         {
             return true;
+        }
+        public override void Register()
+        {
+            Preferences.Set(Keys.NameKey, Name);
+        }
+        public User()
+        {
+            Name = Preferences.Get(Keys.NameKey, string.Empty);
         }
     }
 }
