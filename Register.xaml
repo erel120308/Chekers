@@ -1,12 +1,76 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:vm="clr-namespace:Chekers.ViewModels"
+             xmlns:vm="clr-namespace:Chekers.ViewModel"
              xmlns:m="clr-namespace:Chekers.Models"
              x:Class="Chekers.Register"
              x:DataType="vm:RegisterVM">
-    <VerticalStackLayout Spacing="25" Margin="10">
-        <Entry  Placeholder="{x:Static m:Strings.Name}" Text="{Binding Name}"/>
-        <Button Text="{x:Static m:Strings.Register}" Command="{Binding RegisterCommand}" />
+    <VerticalStackLayout Padding="7" Spacing="10">
+        <Label
+        Margin="20"
+        FontSize="42"
+        HorizontalOptions="Center"
+        Text="{x:Static m:Strings.Register}"
+        TextColor="Blue" />
+        <Label
+            Margin="0,0,0,28"
+        FontAttributes="Bold"
+        FontFamily="MaterialSymbols"
+        FontSize="48"
+        HorizontalOptions="Center"
+        Text="{StaticResource IconVerified_user}"
+        TextColor="Blue" />
+        <Grid>
+            <Border>
+                <Entry Placeholder="{x:Static m:Strings.Name}" Text="{Binding Name}" />
+            </Border>
+            <Label Text="{x:Static m:Strings.Name}" />
+        </Grid>
+        <Grid>
+            <Border>
+                <Entry
+                Keyboard="Email"
+                Placeholder="{x:Static m:Strings.Email}"
+                Text="{Binding Email}" />
+            </Border>
+            <Label Text="{x:Static m:Strings.Email}" />
+        </Grid>
+        <Grid>
+            <Border>
+                <Grid ColumnDefinitions="*,Auto" VerticalOptions="Center">
+                    <Entry
+                    IsPassword="{Binding IsPassword}"
+                    Placeholder="{x:Static m:Strings.Password}"
+                    ReturnType="Done"
+                    Text="{Binding Password}" />
+                    <Button
+                    BackgroundColor="Transparent"
+                    BorderWidth="0"
+                    Command="{Binding ToggleIsPasswordCommand}"
+                    FontFamily="MaterialSymbols"
+                    FontSize="24"
+                    HorizontalOptions="End"
+                    Style="{StaticResource IconButtonStyle}"
+                    Text="{Binding IsPassword, Converter={StaticResource passwordIconConvert}}"
+                    TextColor="Olive"
+                    VerticalOptions="Center"
+                    WidthRequest="80" />
+                </Grid>
+            </Border>
+            <Label Text="{x:Static m:Strings.Password}" />
+        </Grid>
+        <Button
+        Command="{Binding RegisterCommand}"
+        CornerRadius="8"
+        FontSize="18"
+        HeightRequest="50"
+        Text="{x:Static m:Strings.Register}"
+        TextColor="White">
+            <Button.ImageSource>
+                <FontImageSource Glyph="{StaticResource IconApp_registration}">
+                    <FontImageSource.FontFamily>MaterialSymbols</FontImageSource.FontFamily>
+                </FontImageSource>
+            </Button.ImageSource>
+        </Button>
     </VerticalStackLayout>
 </ContentPage>

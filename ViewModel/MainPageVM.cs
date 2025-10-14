@@ -4,10 +4,11 @@ using Chekers.Models;
 
 using System.Windows.Input;     
 
-namespace Chekers.ViewModels
+namespace Chekers.ViewModel
 {
     internal partial class MainPageVM : ObservableObject
     {
+
         private User user = new();
         public ICommand LoginCommand { get; }
         public ICommand ToggleIsPasswordCommand { get; }

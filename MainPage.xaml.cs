@@ -1,4 +1,4 @@
-﻿using Chekers.ViewModels;
+﻿using Chekers.ViewModel;
 
 namespace Chekers
 {
@@ -9,7 +9,7 @@ namespace Chekers
         public MainPage()
         {
             InitializeComponent();
-            BindingContext = new MainPageVM();
+            BindingContext = new ViewModel.MainPageVM();
         }
 
         

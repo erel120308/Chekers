@@ -12,7 +12,11 @@
         public const string LoginFailureMessage = "Login failed. Please try again.";
         public const string UsernameRequiredMessage = "Username is required.";
         public const string PasswordRequiredMessage = "Password is required.";
+        public const string CreatUserError = "Create User Error";
         public const string Name = "Name";
         public const string Register = "Register";
+        public const string Email = "Email";
+        public const string Password = "Password";
+        public const string Ok = "Ok";
     }
 }
