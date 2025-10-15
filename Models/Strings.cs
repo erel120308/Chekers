@@ -1,4 +1,6 @@
-﻿namespace Chekers.Models
+﻿
+
+namespace Chekers.Models
 {
     internal static class Strings
     {
@@ -12,11 +14,17 @@
         public const string LoginFailureMessage = "Login failed. Please try again.";
         public const string UsernameRequiredMessage = "Username is required.";
         public const string PasswordRequiredMessage = "Password is required.";
-        public const string CreatUserError = "Create User Error";
+        public const string CreatUserError = "Registration Failed";
         public const string Name = "Name";
         public const string Register = "Register";
         public const string Email = "Email";
         public const string Password = "Password";
         public const string Ok = "Ok";
+        public const string EmailAlreadyExists = "Email already exists.";
+        public const string InvalidEmailAddress = "Invalid email address.";
+        public const string Success = "Success";
+        public const string RegisterSuccessMassege = "User registered!";
+
+
     }
 }
