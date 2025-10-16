@@ -36,6 +36,19 @@
                 TextColor="Blue" />
         </Border>
         <Border
+    Padding="10"
+    Stroke="Olive"
+    StrokeShape="RoundRectangle 8"
+    StrokeThickness="1">
+            <Entry
+        ClearButtonVisibility="WhileEditing"
+        FontSize="18"
+        Placeholder="{x:Static m:Strings.Email}"
+        ReturnType="Next"
+        Text="{Binding Email}"
+        TextColor="Blue" />
+        </Border>
+        <Border
             Stroke="Olive"
             StrokeShape="RoundRectangle 8"
             StrokeThickness="1">

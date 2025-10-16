@@ -14,6 +14,11 @@ namespace Chekers.ModelLogic
         {
             fdb.CreateUserWithEmailAndPasswordAsync(Email, Password, Name, OnComplete);
         }
+        public override void Login()
+        {
+            fdb.SignInWithEmailAndPasswordAsync(Email, Password, OnComplete);
+        }
+
 
         private  void OnComplete(Task task)
         {
@@ -32,7 +37,8 @@ namespace Chekers.ModelLogic
         }
         public override bool IsValid()
         {
-            return !string.IsNullOrWhiteSpace(Name) && !string.IsNullOrWhiteSpace(Password) && !string.IsNullOrWhiteSpace(Email);
+            return !string.IsNullOrWhiteSpace(Name) && !string.IsNullOrWhiteSpace(Password) && !string.IsNullOrWhiteSpace(Email); 
+           
         }
         public User()
         {

@@ -12,6 +12,7 @@ namespace Chekers.Models
         public string Email { get; set; } = string.Empty;
         public bool IsRegistered => !string.IsNullOrWhiteSpace(Name);
         public string Name { get; set; } = string.Empty;
-        public abstract void Register();
+        public abstract void Register(); 
+        public abstract void Login();
     }
 }
