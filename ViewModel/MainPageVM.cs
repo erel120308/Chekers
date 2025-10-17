@@ -15,6 +15,7 @@ namespace Chekers.ViewModel
         public ICommand LoginCommand { get; }
         public ICommand ToggleIsPasswordCommand { get; }
         public bool IsBusy { get; set; } = false;
+        
         public string UserName
         {
             get => user.UserName;
@@ -51,7 +52,7 @@ namespace Chekers.ViewModel
             ToggleIsPasswordCommand = new Command(ToggleIsPassword);
             GoToRegisterCommand = new Command(async () =>
             {
-                await Application.Current.MainPage.Navigation.PushAsync(new Register());
+                await Application.Current!.MainPage!.Navigation.PushAsync(new Register());
             }); 
         }
 
@@ -69,7 +70,7 @@ namespace Chekers.ViewModel
             try
             {
                 var httpClient = new HttpClient();
-                var apiKey = "AIzaSyDb6javGjKtQTeJESlpm3cRz-pmQfMejBc"; // 🔁 שים את המפתח שלך כאן
+                var apiKey = "AIzaSyDb6javGjKtQTeJESlpm3cRz-pmQfMejBc"; 
 
                 var requestData = new
                 {
@@ -91,7 +92,7 @@ namespace Chekers.ViewModel
                 if (response.IsSuccessStatusCode)
                 {
                     // התחברות הצליחה – מעבר לעמוד הבית
-                    await Application.Current.MainPage.Navigation.PushAsync(new HomePage());
+                    await Application.Current!.MainPage!.Navigation.PushAsync(new HomePage());
                 }
                 else
                 {
@@ -109,12 +110,12 @@ namespace Chekers.ViewModel
                         _ => "שגיאה כללית בהתחברות."
                     };
 
-                    await Application.Current.MainPage.DisplayAlert("שגיאה", errorMessage, "אישור");
+                    await Application.Current!.MainPage!.DisplayAlert("שגיאה", errorMessage, "אישור");
                 }
             }
             catch (Exception ex)
             {
-                await Application.Current.MainPage.DisplayAlert("שגיאה", $"בעיה בחיבור: {ex.Message}", "סגור");
+                await Application.Current!.MainPage!.DisplayAlert("שגיאה", $"בעיה בחיבור: {ex.Message}", "סגור");
             }
             finally
             {

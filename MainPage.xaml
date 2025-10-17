@@ -92,6 +92,10 @@
                 </FontImageSource>
             </Button.ImageSource>
         </Button>
+        <Label 
+    Text="Dosent have an account?"
+    VerticalOptions="Center" 
+    HorizontalOptions="Center" />
         <Button
     BackgroundColor="Transparent"
     BorderWidth="0"

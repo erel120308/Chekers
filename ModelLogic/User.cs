@@ -1,6 +1,8 @@
 ﻿
 using Chekers.Models;
 using Chekers.ModelLogic;
+using CommunityToolkit.Maui.Alerts;
+using CommunityToolkit.Maui.Core;
 
 namespace Chekers.ModelLogic
 {
@@ -23,7 +25,10 @@ namespace Chekers.ModelLogic
         private  void OnComplete(Task task)
         {
             if (task.IsCompletedSuccessfully)
+            {
                 SaveToPreferences();
+                Toast.Make("User Created",ToastDuration.Long).Show();
+            }
 
             else
                 Shell.Current.DisplayAlert(Strings.CreatUserError, task.Exception?.Message, Strings.Ok);

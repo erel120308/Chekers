@@ -1,4 +1,4 @@
-using Chekers.ViewModel;
+   using Chekers.ViewModel;
 
 namespace Chekers;
 
@@ -9,4 +9,4 @@ public partial class Register : ContentPage
 		InitializeComponent();
         BindingContext = new ViewModel.RegisterVM();
     }
-}
+}    
