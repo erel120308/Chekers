@@ -7,5 +7,6 @@
         public const string PasswordKey = "Password";
         public const string FbApiKey = "AIzaSyDb6javGjKtQTeJESlpm3cRz-pmQfMejBc";
         public const string FbAppDomainKey = "chekerss-82075.firebaseapp.com";
+        public const string GamesCollection = "GamesCollection";
     }
 }

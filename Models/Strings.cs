@@ -24,6 +24,11 @@ namespace Chekers.Models
         public const string InvalidEmailAddress = "Invalid email address.";
         public const string Success = "Success";
         public const string RegisterSuccessMassege = "User registered!";
+        public const string GameDeleted = "GameDeleted";
+        public const string AppTitle = "AppTitle";
+        public const string SelectGameSize = "SelectGameSize";
+        public const string AddGame = "AddGame";
+        public const string JoinGameErr = "JoinGameErr";
 
 
     }
