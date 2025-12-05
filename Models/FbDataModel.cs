@@ -25,7 +25,7 @@ namespace Chekers.Models
                 Providers = [new EmailProvider()]
             };
             facl = new FirebaseAuthClient(fac);
-           // fdb = CrossCloudFirestore.Current.Instance;
+            fdb = CrossCloudFirestore.Current.Instance;
         }
     }
 }
